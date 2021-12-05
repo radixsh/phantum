@@ -88,7 +88,7 @@ module.exports = {
         i18n.__mf("play.startedPlaying", { title: song.title, url: song.url })
       );
       await playingMessage.react("⏭");
-      await playingMessage.react("⏯");
+      // await playingMessage.react("⏯");
       await playingMessage.react("🔇");
       await playingMessage.react("🔉");
       await playingMessage.react("🔊");
@@ -117,19 +117,19 @@ module.exports = {
           collector.stop();
           break;
 
-        case "⏯":
-          reaction.users.remove(user).catch(console.error);
-          if (!canModifyQueue(member)) return i18n.__("common.errorNotChannel");
-          if (queue.playing) {
-            queue.playing = !queue.playing;
-            queue.connection.dispatcher.pause(true);
-            queue.textChannel.send(i18n.__mf("play.pauseSong", { author: user })).catch(console.error);
-          } else {
-            queue.playing = !queue.playing;
-            queue.connection.dispatcher.resume();
-            queue.textChannel.send(i18n.__mf("play.resumeSong", { author: user })).catch(console.error);
-          }
-          break;
+        // case "⏯":
+        //   reaction.users.remove(user).catch(console.error);
+        //   if (!canModifyQueue(member)) return i18n.__("common.errorNotChannel");
+        //   if (queue.playing) {
+        //     queue.playing = !queue.playing;
+        //     queue.connection.dispatcher.pause(true);
+        //     queue.textChannel.send(i18n.__mf("play.pauseSong", { author: user })).catch(console.error);
+        //   } else {
+        //     queue.playing = !queue.playing;
+        //     queue.connection.dispatcher.resume();
+        //     queue.textChannel.send(i18n.__mf("play.resumeSong", { author: user })).catch(console.error);
+        //   }
+        //   break;
 
         case "🔇":
           reaction.users.remove(user).catch(console.error);
