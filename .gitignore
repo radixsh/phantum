@@ -3,6 +3,7 @@
 /.vscode
 /sounds/**
 !/sounds/putmusichere.mp3
+node*
 
 # Logs
 logs

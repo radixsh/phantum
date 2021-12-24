@@ -2,7 +2,7 @@ const i18n = require("../util/i18n");
 
 module.exports = {
   name: "uptime",
-  aliases: ["u"],
+  aliases: ["u", "up"],
   description: i18n.__("uptime.description"),
   execute(message) {
     let seconds = Math.floor(message.client.uptime / 1000);
